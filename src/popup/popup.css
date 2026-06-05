@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+}
+
+.popup {
+  background: #fff;
+  color: #0f0f0f;
+  display: grid;
+  gap: 12px;
+  min-width: 220px;
+  padding: 14px;
+  font-family: Inter, Roboto, Arial, sans-serif;
+}
+
+.popup h1 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.popup button {
+  background: #0f0f0f;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 9px 12px;
+}
