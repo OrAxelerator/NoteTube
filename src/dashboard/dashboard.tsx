@@ -168,7 +168,7 @@ function Dashboard() {
 
     const trimmedMarkdown = detailMarkdown.trim();
     if (!trimmedMarkdown && detailTags.length === 0) {
-      await handleDeleteNote(selectedNote.videoId);
+      await handleDeleteNote(selectedNote.videoId, selectedNote.title);
       return;
     }
 
@@ -192,7 +192,10 @@ function Dashboard() {
     }
   };
 
-  const handleDeleteNote = async (videoId: string) => {
+  const handleDeleteNote = async (videoId: string, videoTitle: string) => {
+    const confirmed = window.confirm(`Êtes-vous sûr de vouloir supprimer cette note : "${videoTitle}" ? `);
+    if (!confirmed) return;
+    
     try {
       await deleteNote(videoId);
       setNotes((current) => current.filter((note) => note.videoId !== videoId));
@@ -441,7 +444,7 @@ function Dashboard() {
                 aria-label={`Supprimer la note ${note.title || note.videoId}`}
                 className="note-row__delete"
                 type="button"
-                onClick={() => void handleDeleteNote(note.videoId)}
+                onClick={() => void handleDeleteNote(note.videoId, note.title)}
                 title="Supprimer"
               >
                 <TrashIcon />

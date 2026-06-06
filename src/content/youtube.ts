@@ -1,7 +1,12 @@
 export function getVideoId(url = window.location.href): string | null {
   const parsedUrl = new URL(url);
+  const hostname = parsedUrl.hostname.replace(/^www\./, "");
 
-  if (parsedUrl.hostname !== "www.youtube.com" || parsedUrl.pathname !== "/watch") {
+  if (hostname !== "youtube.com" && hostname !== "youtube-nocookie.com") {
+    return null;
+  }
+
+  if (parsedUrl.pathname !== "/watch") {
     return null;
   }
 

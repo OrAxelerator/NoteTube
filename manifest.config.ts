@@ -6,7 +6,7 @@ const manifest: ManifestV3Export = {
   version: "0.1.0",
   description: "Take local Markdown notes linked to YouTube videos.",
   permissions: ["storage", "tabs"],
-  host_permissions: ["https://www.youtube.com/*", "https://www.youtube-nocookie.com/*"],
+  host_permissions: ["https://*.youtube.com/*", "https://*.youtube-nocookie.com/*"],
   icons: {
     128: "icon128.png",
     512: "icon512.png"

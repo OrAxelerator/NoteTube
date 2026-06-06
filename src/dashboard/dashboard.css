@@ -200,12 +200,19 @@ body {
   width: 100%;
 }
 
+@media (min-width: 600px) {
+  .detail-header {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
 .detail-header img {
   aspect-ratio: 16 / 9;
   background: #ededed;
   border-radius: 6px;
   object-fit: cover;
   width: 100%;
+  height: auto;
 }
 
 .detail-header div {
